@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- ******************** đổi icon ******************** -->
+        <link type="image/x-icon"
+            href="https://w.ladicdn.com/5aa6273ea81f66ca2eacc40b/logo-315-1-1-20240404155152-vjczz.png"
+            rel="icon">
+        <title>Search Map 315</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <style>            
+        .timkiem_chinhanh *,
+        .ds_chinhanh *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        </style>
+        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        .timkiem_chinhanh {
+            width: 960px;
+            color: #333;
+        }
+        .timkiem_chinhanh ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+        }
+
+        .timkiem_chinhanh ::-webkit-scrollbar {
+        width: 8px;
+        background-color: #F5F5F5;
+        }
+
+        .timkiem_chinhanh ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+        background-color: #ccc;
+        }
+
+        .timkiem_chinhanh ::-webkit-scrollbar-thumb:hover,
+        .timkiem_chinhanh ::-webkit-scrollbar-thumb:active {
+        background-color: #00ADEF; /******************** điền màu của của website (NHI-#00ADEF, SAN-#DF5EA2, LAO-#F58220, MAT-#1DBFD7) ********************/
+        }
+        .timkiem_chinhanh .tim_diachi label {
+            background-color: #eee;
+        }
+        .timkiem_chinhanh .tim_diachi label svg {
+            fill: #666;
+            height: 22.5px;
+            width: 22.5px;
+        }
+        .timkiem_chinhanh .tim_diachi input {
+            border-top-left-radius: 0px !important;
+            border-bottom-left-radius: 0px !important;
+        }
+        .timkiem_chinhanh select,
+        .timkiem_chinhanh .tim_diachi input,
+        .timkiem_chinhanh .tim_diachi label {
+            height: 48px;
+        }
+        .ds_chinhanh{
+            background-color: #fafafa;
+            height: 500px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            font-size: 17px;
+        }
+        .ds_chinhanh .div_chinhanh{
+            border-color: #ccc !important;
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+        .ds_chinhanh .div_chinhanh:hover,
+        .ds_chinhanh .div_chinhanh:active{
+            background-color: #e8e8e8;
+            border-color: #aaa !important;
+        }
+        .ds_chinhanh .detail .svg_span{
+            display: flex;
+            justify-content: flex-start;
+        }  
+        .ds_chinhanh .detail .svg_span svg,
+        .ds_chinhanh .detail .svg_span span{
+            height: 24px;
+            line-height: 24px;
+        }
+        .ds_chinhanh .detail .svg_span span{
+            height: fit-content;
+            margin-left: 5px;
+        }
+        .ds_chinhanh .detail svg{
+            height: 20px;
+            width: 20px;
+            fill: #00ADEF;/******************** điền màu của của website (NHI-#00ADEF, SAN-#DF5EA2, LAO-#F58220, MAT-#1DBFD7) ********************/
+        }
+        .ds_chinhanh .detail .name{
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #00ADEF;/******************** điền màu của của website (NHI-#00ADEF, SAN-#DF5EA2, LAO-#F58220, MAT-#1DBFD7) ********************/
+        }        
+        .ds_chinhanh .detail .hotline a{
+            width: fit-content;
+        }
+        .ds_chinhanh .detail .hotline,
+        .ds_chinhanh .detail .address{
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+        .ds_chinhanh .detail .hotline a,
+        .ds_chinhanh .detail .address a{            
+            color: #666;
+            text-decoration: none;
+        }
+        .ds_chinhanh .detail .hotline a:hover,
+        .ds_chinhanh .detail .address a:hover,
+        .ds_chinhanh .detail .hotline a:active,
+        .ds_chinhanh .detail .address a:active,
+        .timkiem_chinhanh .tim_diachi input::placeholder{
+            color: #222;
+        }
+        .ds_chinhanh .detail .clockWork{
+            font-size: 16px;
+            color:#666;
+            font-style: italic;
+            text-transform: uppercase;
+        }
+        .ds_chinhanh .detail .clockWork svg{
+            height: 13px;
+            width: 13px;
+            fill: #666;
+        }
+        .ds_chinhanh .detail .clockWork span{
+            height: fit-content;            
+            height: 20px;
+            line-height: 20px;
+        }
+        .div_ketqua{
+            border-color: #ccc !important;
+        }
+        .ban_do{
+            padding-left: 15px !important;
+        }
+        .ban_do iframe{
+            width: 100% !important;
+            height: 100% !important;
+            border: 1px solid #ccc !important;
+            border-radius: 8px !important;
+        }
+        .ketqua{
+            border-top-left-radius: 8px !important;
+            border-top-right-radius: 8px !important;
+            background-color: #00ADEF;/******************** điền màu của của website (NHI-#00ADEF, SAN-#DF5EA2, LAO-#F58220, MAT-#1DBFD7) ********************/
+            color: #F5F5F5;
+            font-size: 20px;
+        }
+        .ketqua div {
+            text-align: center;
+        }
+        .ketqua div i{
+            display: inline !important;
+            font-size: 25px;
+        }
+        .chon_chinhanh{
+            background-color: rgba(0,173,239,0.1) !important;
+        }
+        @media only screen and (max-width: 600px) {
+            .ds_chinhanh{
+                height: 375px;
+            }
+            .div_ketqua{
+                margin-bottom: 20px;
+            }            
+            .ban_do{
+                padding-left: 0px !important;
+                height: 500px;
+            }
+        }
+        </style>
+
+    </head>
+
+    <body class="d-flex justify-content-center">
+
+        <div
+            class="row border border-2 rounded-3 h-100 p-3 fs-5 timkiem_chinhanh">
+            <div class="row m-0 p-0 d-flex justify-content-between">
+                <div class="col-md-5 d-flex flex-row p-0 mb-3 tim_diachi">
+                    <label for="txt_timdiachi"
+                        class="border border-1 rounded-5 rounded-start-pill p-2 ps-3">
+                        <svg viewBox="0 0 512 512">
+                            <path
+                                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM288 176c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 48.8 46.5 111.6 68.6 138.6c6 7.3 16.8 7.3 22.7 0c22.1-27 68.6-89.8 68.6-138.6zm-112 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z">
+                            </path>
+                        </svg></label>
+                    <input class="w-100 border border-1 rounded-5 p-3"
+                        id="txt_timdiachi"
+                        placeholder="Tìm địa chỉ..."
+                        type="search">
+                </div>
+                <div class="col-md-3 p-0 mb-3">
+                    <select class="w-100 border border-1 rounded-5 p-2 ps-3"
+                        id="cbb_timtinhtp">
+                        <option value="all" selected>Chọn Tỉnh/TP...</option>
+                    </select>
+                </div>
+                <div class="col-md-3 p-0 mb-3">
+                    <select class="w-100 border border-1 rounded-5 p-2 ps-3"
+                        id="cbb_timquanhuyen">
+                    </select>
+                </div>
+            </div>
+            <div class="row m-0 p-0 mb-2 d-flex justify-content-between">
+                <div class="col-md-5 border border-1 rounded-3 p-0 div_ketqua">
+                    <div class="row m-0 p-1 ketqua" id="ketqua"></div>
+                    <div class="ds_chinhanh">
+                        <div class="row m-0 p-2" id="ds_ketqua"></div>
+                    </div>
+                </div>
+                <div class="col-md-7 p-0 ban_do" id="ban_do">
+                </div>
+            </div>
+        </div>
+        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            let ketQua = document.getElementById("ketqua"),
+                dsKetQua = document.getElementById("ds_ketqua"),
+                inputTimDiaChi = document.getElementById("txt_timdiachi"),
+                inputTimTinhTp = document.getElementById("cbb_timtinhtp"),
+                inputTimQuanHuyen = document.getElementById("cbb_timquanhuyen");
+
+            fetch('../data_map.json').then(response => response.json()).then(data => {
+                const locChuyenKhoa = (dataMap, dsQuanHuyen) => {
+                    let dataMapTemp = [],
+                        dsTinhTp = [];
+                    if (dataMap.length > 0) {
+                        dataMap.forEach(chiNhanh => {
+                            //******************** điền chuyên khoa của website (NHI, SAN, LAO, MAT, BVSAN, BVNHI) ********************//
+                            if (chiNhanh.type === "NHI" || chiNhanh.type === "BVNHI") {
+                                chiNhanh.name = (chiNhanh.workingTime === "Time.part" ? "Nhi Đồng 315" : "Nhi Đồng 315 & Tiêm Chủng Nhi");
+                                chiNhanh.name = (chiNhanh.type === "BVNHI" ? "Bệnh viện Nhi Đồng Quốc Tế 315" : chiNhanh.name);
+                                chiNhanh.hotline = (chiNhanh.hotline === "Hotline315" ? `0901.315.315` : chiNhanh.hotline);
+                                chiNhanh.workingTime = (chiNhanh.workingTime === "Time.full" ? `T2-CN: 8:00 - 11:30 & 13:30 - 20:30` : chiNhanh.workingTime === "Time.part" ? `T2-T6: 17:00 - 20:30</br>&nbsp;&nbsp;&nbsp;&nbsp;T7-CN: 8:00 - 11:30 & 13:30 - 20:30` : chiNhanh.workingTime === "Time.comingsoon" ? "Coming soon":chiNhanh.workingTime);
+                                dataMapTemp.push(chiNhanh);
+                                if (dsTinhTp.some(tinhTp => tinhTp === chiNhanh.city) === false) {
+                                    dsTinhTp.push(chiNhanh.city);
+                                };
+                                if (dsQuanHuyen.some(qh => qh.quanHuyen === chiNhanh.district) === false) {
+                                    dsQuanHuyen.push({ tinhTp: chiNhanh.city, quanHuyen: chiNhanh.district });
+                                };
+                            }
+                        });
+                        if (dsTinhTp.length > 0) {
+                            dsTinhTp.forEach(tinhTp => {
+                                inputTimTinhTp.innerHTML += `<option value="${tinhTp}">${tinhTp === "TP. HCM" ? "Hồ Chí Minh" : tinhTp}</option>`;
+                            });
+                        }
+                        if (dsQuanHuyen.length > 0) {
+                            let stt = 24;
+                            dsQuanHuyen.forEach(qh => {
+                                if (qh.quanHuyen === "TP. Thủ Đức") qh.stt = 1;
+                                else if (qh.quanHuyen === "Q. 1") qh.stt = 2;
+                                else if (qh.quanHuyen === "Q. 3") qh.stt = 3;
+                                else if (qh.quanHuyen === "Q. 4") qh.stt = 4;
+                                else if (qh.quanHuyen === "Q. 5") qh.stt = 5;
+                                else if (qh.quanHuyen === "Q. 6") qh.stt = 6;
+                                else if (qh.quanHuyen === "Q. 7") qh.stt = 7;
+                                else if (qh.quanHuyen === "Q. 8") qh.stt = 8;
+                                //9
+                                else if (qh.quanHuyen === "Q. 10") qh.stt = 10;
+                                else if (qh.quanHuyen === "Q. 11") qh.stt = 11;
+                                else if (qh.quanHuyen === "Q. 12") qh.stt = 12;
+                                else if (qh.quanHuyen === "Q. Bình Tân") qh.stt = 13;
+                                else if (qh.quanHuyen === "Q. Bình Thạnh") qh.stt = 14;
+                                else if (qh.quanHuyen === "Q. Gò Vấp") qh.stt = 15;
+                                else if (qh.quanHuyen === "Q. Phú Nhuận") qh.stt = 16;
+                                else if (qh.quanHuyen === "Q. Tân Bình") qh.stt = 17;
+                                else if (qh.quanHuyen === "Q. Tân Phú") qh.stt = 18;
+                                else if (qh.quanHuyen === "H. Bình Chánh") qh.stt = 19;
+                                else if (qh.quanHuyen === "H. Nhà Bè") qh.stt = 20;
+                                else if (qh.quanHuyen === "H. Hóc Môn") qh.stt = 21;
+                                else if (qh.quanHuyen === "H. Củ Chi") qh.stt = 22;
+                                else if (qh.quanHuyen === "H. Cần Giờ") qh.stt = 23;
+                                else qh.stt = stt++;
+                            });
+                            dsQuanHuyen.sort(function (a, b) { return a.stt - b.stt; });
+                            loadQuanHuyen(dsQuanHuyen);
+                        }
+                    }
+                    return dataMapTemp;
+                }
+                const layIdChiNhanh = (chiNhanh) => {
+                    return "id" + dataMapDangXem.indexOf(chiNhanh);
+                }
+                const xuLyChuoi = (str) => {
+                    str = str.toLowerCase();
+                    str = str.replace(/\s+|street|ward|district|city/g, ' ');
+                    str = str.trim();
+                    str = str.replace(/ql\.|ql/g, 'quoc lo ');
+                    str = str.replace(/tl\.|tl/g, 'tinh lo ');
+                    str = str.replace(/thành phố|thanh pho|tp /g, 'tp. ');
+                    str = str.replace(/tphcm|tp.hcm/g, 'tp. hcm');
+                    str = str.replace(/q2|q9|quận 2|quận 9|quan 2|quan 9/g, 'tp. thủ đức');
+                    str = str.replace(/quận|q |q\./g, 'q. ');
+                    str = str.replace(/huyện|h\./g, 'h. ');
+                    str = str.replace(/q1|quận 1|quan 1/g, 'q. 1,');
+                    str = str.replace(/q3|quận 3|quan 3/g, 'q. 3,');
+                    str = str.replace(/q4|quận 4|quan 4/g, 'q. 4,');
+                    str = str.replace(/q5|quận 5|quan 5/g, 'q. 5,');
+                    str = str.replace(/q6|quận 6|quan 6/g, 'q. 6,');
+                    str = str.replace(/q7|quận 7|quan 7/g, 'q. 7,');
+                    str = str.replace(/q8|quận 8|quan 8/g, 'q. 8,');
+                    str = str.replace(/q10|quận 10|quan 10/g, 'q. 10,');
+                    str = str.replace(/q11|quận 11|quan 11/g, 'q. 11,');
+                    str = str.replace(/q12|quận 12|quan 12/g, 'q. 12,');
+                    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, 'a');
+                    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, 'e');
+                    str = str.replace(/ì|í|ị|ỉ|ĩ/g, 'i');
+                    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, 'o');
+                    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, 'u');
+                    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, 'y');
+                    str = str.replace(/đ/g, 'd');
+                    str = str.replace(/\s+/g, ' ');
+                    str = str.trim();
+                    return str;
+                }
+                const loadQuanHuyen = (dsQuanHuyen) => {
+                    let tinhTp = inputTimTinhTp.value,
+                        quanHuyen = (inputTimQuanHuyen.value === "" ? `all` : inputTimQuanHuyen.value);
+                    inputTimQuanHuyen.innerHTML = `<option value="all" selected>Chọn Quận/Huyện...</option>`;
+                    if (dsQuanHuyen.length > 0) {
+                        dsQuanHuyen.forEach(qh => {
+                            if (qh.tinhTp === tinhTp) {
+                                inputTimQuanHuyen.innerHTML += `<option value="${qh.quanHuyen}">${qh.quanHuyen}</option>`;
+                            }
+                        });
+                        inputTimQuanHuyen.value = quanHuyen;
+                        return true;
+                    }
+                    inputTimQuanHuyen.value = "all";
+                    return false;
+                }
+                const loadMap = (iframeChiNhanh) => {
+                    document.getElementById("ban_do").innerHTML = ``;
+                    return document.getElementById("ban_do").innerHTML = iframeChiNhanh;
+                }
+                const locTheoTuKhoa = (dataMap, tuKhoa) => {
+                    let dataMapTemp = [];
+                    tuKhoa = xuLyChuoi(tuKhoa);
+                    if (tuKhoa !== "all" && tuKhoa !== "" && dataMap.length > 0) {
+                        dataMap.map((chiNhanh) => {
+                            if (xuLyChuoi(chiNhanh.address).includes(tuKhoa) || xuLyChuoi(chiNhanh.city).includes(tuKhoa) || xuLyChuoi(chiNhanh.district).includes(tuKhoa)) {
+                                dataMapTemp.push(chiNhanh);
+                            }
+                        });
+                        return dataMapTemp;
+                    }
+                    return dataMap;
+                }
+                const locTheoQuanHuyen = (dataMap, quanHuyen) => {
+                    let dataMapTemp = [];
+                    if (quanHuyen !== "all" && quanHuyen !== "" && dataMap.length > 0) {
+                        dataMap.map((chiNhanh) => {
+                            if (chiNhanh.district === quanHuyen) {
+                                dataMapTemp.push(chiNhanh);
+                            }
+                        });
+                        return dataMapTemp;
+                    }
+                    return dataMap;
+                }
+                const loadKetQua = (dataMap) => {
+                    dataMap = locTheoTuKhoa(dataMap, inputTimDiaChi.value);
+                    if (inputTimTinhTp.value !== "all" || inputTimTinhTp.value !== "") {
+                        dataMap = locTheoTuKhoa(dataMap, inputTimTinhTp.value);
+                        dataMap = locTheoQuanHuyen(dataMap, inputTimQuanHuyen.value);
+                    }
+                    ketQua.innerHTML = `<div><i class="fa fa-map-marker" aria-hidden="true"></i><span>&nbsp;Có ${dataMap.length} chi nhánh phù hợp</span></div>`;
+                    dsKetQua.innerHTML = "";
+                    if (dataMap.length > 0) {
+                        loadMap(dataMap[0].srcIframe);
+                        dataMap.forEach(chiNhanh => {
+                            let divChiNhanh = document.createElement("div");
+                            divChiNhanh.classList.add("row", "m-0", "mb-2", "border", "border-1", "rounded-3", "div_chinhanh", "p-0");
+                            divChiNhanh.id = layIdChiNhanh(chiNhanh);
+                            divChiNhanh.addEventListener("click", () => {
+                                loadMap(chiNhanh.srcIframe);
+                                let divChiNhanhDangChon = document.getElementsByClassName("chon_chinhanh");
+                                while (divChiNhanhDangChon.length > 0) {
+                                    divChiNhanhDangChon[0].classList.remove("chon_chinhanh");
+                                    divChiNhanhDangChon = document.getElementsByClassName("chon_chinhanh");
+                                }
+                                divChiNhanh.classList.add("chon_chinhanh");
+                            });
+                            divChiNhanh.innerHTML += `
+                                    <div class="detail p-1 px-2">
+                                        <div class="name svg_span">
+                                            <svg viewBox="0 0 24 24" fill="rgba(0, 175, 239, 1)"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path></svg>
+                                            <span>${chiNhanh.name}</span>
+                                        </div>
+                                        <div class="hotline">
+                                            <a href="tel: ${chiNhanh.hotline}" class="svg_span">
+                                                <svg viewBox="0 0 24 24" fill="rgba(0, 175, 239, 1)"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"></path></svg>
+                                                <span>${chiNhanh.hotline}</span>
+                                            </a>
+                                        </div>
+                                        <div class="address">
+                                            <a target="_blank" href="${chiNhanh.linkMap}">
+                                                <svg viewBox="0 0 24 24" id="magicoon-Filled"><path id="map-marker-Filled-2" data-name="map-marker-Filled" class="cls-1" d="M14,10a2,2,0,1,1-2-2A2.006,2.006,0,0,1,14,10Zm5.5,0c0,6.08-4.67,9.89-6.67,11.24a1.407,1.407,0,0,1-.83.26,1.459,1.459,0,0,1-.84-.26C9.16,19.89,4.5,16.09,4.5,10A7.33,7.33,0,0,1,12,2.5,7.336,7.336,0,0,1,19.5,10ZM16,10a4,4,0,1,0-4,4A4,4,0,0,0,16,10Z"></path></svg>
+                                                <span>${chiNhanh.address}</span>
+                                            </a>
+                                        </div>
+                                        <div class="clockWork border-top border-1 mt-1 pt-1 border-secondary-subtle">
+                                            <span ${chiNhanh.workingTime === "Coming soon" ? `style="color: red !important; font-weight: bold !important;"` : ``}>
+                                                <i class="fa fa-clock-o"></i>&nbsp;${chiNhanh.workingTime}
+                                            </span>
+                                        </div>
+                                    </div>
+                            `;
+                            dsKetQua.appendChild(divChiNhanh);
+                        });
+                    }
+                    loadQuanHuyen(dsQuanHuyen);
+                    return dataMap;
+                }
+
+                let dsQuanHuyen = [];
+                const dataMapDangXem = locChuyenKhoa(data, dsQuanHuyen);
+                loadKetQua(dataMapDangXem);
+
+                inputTimDiaChi.addEventListener('change', () => {
+                    loadKetQua(dataMapDangXem);
+                });
+                inputTimDiaChi.addEventListener('keyup', () => {
+                    loadKetQua(dataMapDangXem);
+                });
+                inputTimTinhTp.addEventListener('change', () => {
+                    inputTimQuanHuyen.value = "all";
+                    loadKetQua(dataMapDangXem);
+                });
+                inputTimQuanHuyen.addEventListener('change', () => {
+                    loadKetQua(dataMapDangXem);
+                });
+            });
+        </script>
+
+    </body>
+</html>

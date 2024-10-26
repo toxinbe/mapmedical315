@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link rel="icon"
+      href="https://w.ladicdn.com/5aa6273ea81f66ca2eacc40b/logo-315-1-1-20240404155152-vjczz.png"
+      type="image/x-icon">
+    <title>Clinic Map 315</title>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+
+  <body>
+    <div id="map">
+    </div>
+    <div id="form_select_filter"
+      class="form-control p-0">
+      <button id="btn_timkiem" type="button" class="btn p-2"
+        title="Mở khung tìm kiếm chi nhánh"><svg
+          viewBox="0 0 24 24"><path
+            d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z" /></svg>
+      </button>
+      <div class="row justify-content-center color_text p-3"
+        id="div_timkiem">
+        <div class="col-md-12">
+          <div id="exit_timkiem" title="Đóng khung tìm kiếm chi nhánh">
+            <svg viewBox="0 0 16 16" id="svg2" version="1.1">
+              <g id="layer1" transform="rotate(45 1254.793 524.438)"><path
+                  d="m7.295 1048.652 1.412-1.411-6.364-6.364 6.364-6.364-1.414-1.414-7.778 7.778z"
+                  id="path4179" />
+              </g>
+            </svg>
+          </div>
+          <div class="row mb-1 justify-content-end">
+            <div class="m-auto ms-0 me-1 cursor" style="width: fit-content;"
+              title="Xóa tất cả bộ lọc" id="xoa_boloc">
+              <svg version="1.1" id="Icons" class="exit"
+                viewBox="0 0 32 32" xml:space="preserve">
+                <circle cx="23" cy="22" r="7" />
+                <line x1="20.9" y1="19.9" x2="25.1" y2="24.1" />
+                <line x1="20.9" y1="24.1" x2="25.1" y2="19.9" />
+                <ellipse cx="14" cy="6.5" rx="13" ry="3.5" />
+                <polyline points="22.8,14.8 27,11 27,6.5 " />
+                <polyline
+                  points="1,6.5 1,11 12,21 12,29 16,27 16,22.9 " />
+              </svg>
+            </div>
+            <div class="btn-group" title="Chuyển đổi ngôn ngữ"
+              style="width: fit-content !important;">
+              <button class="btn dropdown-toggle p-0 ps-2 pe-2 border border-1"
+                type="button" id="btn_ngonngu" value="vn"
+                data-bs-toggle="dropdown" aria-expanded="false">
+              </button>
+              <ul class="dropdown-menu ul_ngonngu">
+                <li><a
+                    class="dropdown-item p-1 ps-2 pe-2" id="btn_tiengviet"><svg
+                      viewBox="0 0 36 36" id="svg_tiengviet"
+                      aria-hidden="true" role="img"
+                      class="iconify iconify--twemoji"
+                      preserveAspectRatio="xMidYMid meet"><path fill="#DA251D"
+                        d="M32 5H4a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4V9a4 4 0 0 0-4-4z"></path><path
+                        fill="#FF0"
+                        d="M19.753 16.037L18 10.642l-1.753 5.395h-5.672l4.589 3.333l-1.753 5.395L18 21.431l4.589 3.334l-1.753-5.395l4.589-3.333z"></path></svg><span
+                      class="ms-1">Tiếng
+                      Việt</span></a></li>
+                <li><a class="dropdown-item p-1 ps-2 pe-2"
+                    id="btn_tienganh"><svg
+                      viewBox="0 0 36 36" id="svg_tienganh"
+                      aria-hidden="true" role="img"
+                      class="iconify iconify--twemoji"
+                      preserveAspectRatio="xMidYMid meet"><path fill="#B22334"
+                        d="M35.445 7C34.752 5.809 33.477 5 32 5H18v2h17.445zM0 25h36v2H0zm18-8h18v2H18zm0-4h18v2H18zM0 21h36v2H0zm4 10h28c1.477 0 2.752-.809 3.445-2H.555c.693 1.191 1.968 2 3.445 2zM18 9h18v2H18z"></path><path
+                        fill="#EEE"
+                        d="M.068 27.679c.017.093.036.186.059.277c.026.101.058.198.092.296c.089.259.197.509.333.743L.555 29h34.89l.002-.004a4.22 4.22 0 0 0 .332-.741a3.75 3.75 0 0 0 .152-.576c.041-.22.069-.446.069-.679H0c0 .233.028.458.068.679zM0 23h36v2H0zm0-4v2h36v-2H18zm18-4h18v2H18zm0-4h18v2H18zM0 9zm.555-2l-.003.005L.555 7zM.128 8.044c.025-.102.06-.199.092-.297a3.78 3.78 0 0 0-.092.297zM18 9h18c0-.233-.028-.459-.069-.68a3.606 3.606 0 0 0-.153-.576A4.21 4.21 0 0 0 35.445 7H18v2z"></path><path
+                        fill="#3C3B6E"
+                        d="M18 5H4a4 4 0 0 0-4 4v10h18V5z"></path><path
+                        fill="#FFF"
+                        d="M2.001 7.726l.618.449l-.236.725L3 8.452l.618.448l-.236-.725L4 7.726h-.764L3 7l-.235.726zm2 2l.618.449l-.236.725l.617-.448l.618.448l-.236-.725L6 9.726h-.764L5 9l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L9 9l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L13 9l-.235.726zm-8 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L5 13l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L9 13l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L13 13l-.235.726zm-6-6l.618.449l-.236.725L7 8.452l.618.448l-.236-.725L8 7.726h-.764L7 7l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 7l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 7l-.235.726zm-12 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L3 11l-.235.726zM6.383 12.9L7 12.452l.618.448l-.236-.725l.618-.449h-.764L7 11l-.235.726h-.764l.618.449zm3.618-1.174l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 11l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 11l-.235.726zm-12 4l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L3 15l-.235.726zM6.383 16.9L7 16.452l.618.448l-.236-.725l.618-.449h-.764L7 15l-.235.726h-.764l.618.449zm3.618-1.174l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L11 15l-.235.726zm4 0l.618.449l-.236.725l.617-.448l.618.448l-.236-.725l.618-.449h-.764L15 15l-.235.726z"></path></svg><span
+                      class="ms-1">English</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <input id="txt_timdiachi"
+              class="form-control p-2 dropdown-toggle"
+              placeholder="Tìm địa chỉ..." type="search">
+            <ul class="m-auto me-3"
+              id="ds_diachi">
+            </ul>
+          </div>
+          <div class="row mb-3 checkbox">
+            <select id="cbb_timtinhtp" class="form-select p-2">
+            </select>
+          </div>
+          <div class="row mb-3">
+            <div class="form-check form-switch fs-5 checkbox">
+              <input id="ckb_all" class="form-check-input"
+                type="checkbox"
+                role="switch" checked>
+              <label class="form-check-label ms-1" for="ckb_all"
+                id="lbl_all"><span id="span_all"></span></label>
+              <div id="bo_chontatca"
+                title="Bỏ chọn tất cả các chuyên khoa">
+                <svg class="exit" viewBox="0 0 1920 1920">
+                  <path
+                    d="M797.32 985.882 344.772 1438.43l188.561 188.562 452.549-452.549 452.548 452.549 188.562-188.562-452.549-452.548 452.549-452.549-188.562-188.561L985.882 797.32 533.333 344.772 344.772 533.333z" />
+                </svg>
+              </div>
+            </div>
+            <div id="div_chuyenkhoa" class="form-control p-2">
+              <div class="checkbox">
+                <input id="ckb_nhi" class="form-check-input"
+                  type="checkbox"
+                  checked disabled>
+                <label class="form-check-label ms-0" for="ckb_nhi"
+                  id="lbl_nhi"></label>
+              </div>
+              <div class="checkbox">
+                <input id="ckb_san" class="form-check-input"
+                  type="checkbox" checked disabled>
+                <label class="form-check-label ms-0" for="ckb_san"
+                  id="lbl_san"></label>
+              </div>
+              <div class="checkbox">
+                <input id="ckb_lao" class="form-check-input"
+                  type="checkbox"
+                  checked disabled>
+                <label class="form-check-label ms-0" for="ckb_lao"
+                  id="lbl_lao"></label>
+              </div>
+              <div class="checkbox">
+                <input id="ckb_mat" class="form-check-input"
+                  type="checkbox"
+                  checked disabled>
+                <label class="form-check-label ms-0" for="ckb_mat"
+                  id="lbl_mat"></label>
+              </div>
+              <div class="checkbox">
+                <input id="ckb_bvsan" class="form-check-input"
+                  type="checkbox"
+                  checked disabled>
+                <label class="form-check-label ms-0" for="ckb_bvsan"
+                  id="lbl_bvsan"></label>
+              </div>
+              <div class="checkbox">
+                <input id="ckb_bvnhi" class="form-check-input"
+                  type="checkbox"
+                  checked disabled>
+                <label class="form-check-label ms-0" for="ckb_bvnhi"
+                  id="lbl_bvnhi"></label>
+              </div>
+              <div class="checkbox">
+                <input id="ckb_vp" class="form-check-input"
+                  type="checkbox"
+                  checked disabled>
+                <label class="form-check-label ms-0" for="ckb_vp"
+                  id="lbl_vp"></label>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3 pt-3 border-top border-1 justify-content-center"
+            id="div_timlancan">
+            <div class="form-check form-switch fs-5 checkbox">
+              <input id="ckb_timlancan" class="form-check-input"
+                type="checkbox" role="switch">
+              <label class="form-check-label ms-1" for="ckb_timlancan"
+                id="lbl_lancan"></label>
+            </div>
+            <div class="form-control p-2" id="div_loaitimlancan">
+              <div class="form-check">
+                <input class="form-check-input" name="rad_timlancan"
+                  type="radio" value="km"
+                  id="rad_timtheokm"
+                  checked>
+                <label class="form-check-label checkbox cursor ms-1"
+                  id="lbl_bankinh"
+                  for="rad_timtheokm">Bán kính</label>
+                <div class="row justify-content-center">
+                  <div class="col-md-3 checkbox">
+                    <input id="txt_bankinh"
+                      class="form-control ps-2 mb-5 fs-5"
+                      maxlength="4"
+                      placeholder="...Km" type="number"
+                      min="0" max="1750">
+                  </div>
+                </div>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" name="rad_timlancan"
+                  type="radio" value="quan"
+                  id="rad_timtheoquan">
+                <label class="form-check-label checkbox cursor ms-1"
+                  id="lbl_quanhuyen"
+                  for="rad_timtheoquan">Quận / Huyện</label>
+                <div class="form-control" id="div_quanhuyen">
+                  <div class="row">
+                    <div class="col-sm-4 checkbox p-2" id="div_quanhuyen_cot1">
+                    </div>
+                    <div class="col-sm-4 checkbox p-2" id="div_quanhuyen_cot2">
+                    </div>
+                    <div class="col-sm-4 checkbox p-2" id="div_quanhuyen_cot3">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row mt-3 mb-1 pt-3 border-top border-1">
+            <div class="form-control p-2">464 Nguyễn An Ninh, P. Dĩ An, TP. Dĩ
+              An, Tỉnh Bình Dương</div>
+          </div>
+          <div class="row mb-1">
+            <div class="form-control p-2">464 Nguyễn An Ninh, P. Dĩ An, TP. Dĩ
+              An, Tỉnh Bình Dương</div>
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- prettier-ignore -->
+    <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+      ({ key: "AIzaSyD3GG7Qq1XgRMAcjPejT9spgnR4RZ9xzbU", v: "weekly" });</script>
+  </body>
+
+</html>

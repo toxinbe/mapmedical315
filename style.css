@@ -1,0 +1,632 @@
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* 
+   * Optional: Makes the sample page fill the window. 
+   */
+:root {
+  --color-title: #919396;
+  --color-second-title: rgb(0, 175, 239);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+[class$=api-load-alpha-banner] {
+  display: none;
+}
+
+.property {
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  color: #263238;
+  display: flex;
+  font-size: 14px;
+  gap: 15px;
+  height: 30px;
+  justify-content: center;
+  padding: 4px;
+  position: relative;
+  position: relative;
+  transition: all 0.3s ease-out;
+  width: 30px;
+  flex-direction: column;
+}
+
+.property::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid var(--color-second-title);
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 85%;
+  transform: translate(-50%, 0);
+  transition: all 0.3s ease-out;
+  width: 0;
+  z-index: 1;
+}
+
+.property .icon img {
+  height: auto;
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+.property .icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #FFFFFF;
+  position: relative;
+}
+
+/*
+ * Property styles in highlighted state.
+ */
+
+.property.highlight::after {
+  border-top: 9px solid var(--color-second-title);
+}
+
+
+
+.property.highlight .icon svg {
+  width: 50px;
+  height: 50px;
+}
+
+.property .addressTitle p {
+  padding: 0 5px;
+  text-transform: capitalize;
+  margin: 0;
+  width: max-content;
+}
+
+/* hover */
+.yNHHyP-marker-view:hover {
+  z-index: 10 !important;
+}
+
+.yNHHyP-marker-view:has(.property_vp) {
+  z-index: 1;
+}
+
+.property:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.property .addressTitle {
+  text-align: center;
+  background-color: white;
+  padding: 5px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
+  border: solid 1px var(--color-second-title);
+  transform: translateY(-10px);
+  display: none;
+}
+
+.yNHHyP-marker-view:hover .property .addressTitle {
+  display: block;
+}
+
+.yNHHyP-marker-view:hover .property .icon {
+  transform: translateY(-22px)
+}
+
+.property .detail {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+}
+
+.property.highlight {
+  flex-direction: row;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px;
+  height: fit-content;
+  padding: 8px 15px;
+  width: max-content;
+  overflow: hidden;
+}
+
+.property.highlight {
+  padding: 10px;
+  background-color: white;
+  color: var(--color-title);
+  border: 1px solid var(--color-second-title);
+}
+
+.property.highlight .detail {
+  display: flex;
+  line-height: 25px;
+
+}
+
+.property.highlight::after {
+  border-top: 9px solid transparent;
+}
+
+.yNHHyP-marker-view:hover .property.highlight .addressTitle {
+  display: none;
+}
+
+.yNHHyP-marker-view:hover .property.highlight .icon {
+  transform: unset
+}
+
+.property.highlight .icon img {
+  width: 65px;
+}
+
+.property.highlight .detail .clockWork {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+  border-top: 1px solid #d3d7db;
+  text-transform: uppercase;
+}
+
+/*
+* Property styles in highlighted state.
+*/
+/* hover */
+.property .addressTitle,
+.property .icon,
+.property .detail {
+  color: #666;
+  /* font-weight: bold; */
+}
+
+.property .addressTitle,
+.property .detail span {
+  font-weight: bold;
+}
+
+.property .detail .clockWork span {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.property .detail .clockWork svg path {
+  filter: invert(16%) sepia(3%) saturate(16%) hue-rotate(11deg) brightness(98%) contrast(87%);
+  border: #666;
+}
+
+.property .detail {
+  line-height: 22px !important;
+}
+
+.property .detail .address {
+  padding-bottom: 3px;
+  margin-right: 5px;
+}
+
+.property .detail a {
+  color: #666;
+  text-decoration: none;
+}
+
+.property .detail a:hover,
+.property .detail a:active,
+.color_text *,
+.color_text input::placeholder {
+  color: #222 !important;
+}
+
+.property .detail {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+}
+
+.property .detail .svg_icon {
+  margin: -3px 0;
+  height: 17px;
+  width: 17px;
+}
+
+.property .detail .name {
+  text-transform: uppercase;
+}
+
+.property .detail .address {
+  text-transform: capitalize;
+}
+
+.logo_pk {
+  margin-bottom: 10px !important;
+  width: 75px !important;
+}
+
+.coming_soon {
+  color: red;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+
+.color_nhi,
+.color_bvnhi,
+.color_vp {
+  color: #00ADEF !important;
+  fill: #00ADEF;
+}
+
+.color_san,
+.color_bvsan {
+  color: #DF5EA2 !important;
+  fill: #DF5EA2;
+}
+
+.color_lao {
+  color: #F58220 !important;
+  fill: #F58220;
+}
+
+.color_mat {
+  color: #1DBFD7 !important;
+  fill: #1DBFD7;
+}
+
+.property_nhi::after,
+.property_bvnhi::after {
+  border-top: 9px solid #00ADEF;
+}
+
+
+.property_san::after,
+.property_bvsan::after {
+  border-top: 9px solid #DF5EA2;
+}
+
+.property_lao::after {
+  border-top: 9px solid #F58220;
+}
+
+.property_mat::after {
+  border-top: 9px solid #1DBFD7;
+}
+
+.property_nhi.highlight,
+.property_nhi .addressTitle,
+.property_bvnhi.highlight,
+.property_bvnhi .addressTitle {
+  border: 1px solid #00ADEF;
+}
+
+.property_san.highlight,
+.property_san .addressTitle,
+.property_bvsan.highlight,
+.property_bvsan .addressTitle {
+  border: 1px solid #DF5EA2;
+}
+
+.property_lao.highlight,
+.property_lao .addressTitle {
+  border: 1px solid #F58220;
+}
+
+.property_mat.highlight,
+.property_mat .addressTitle {
+  border: 1px solid #1DBFD7;
+}
+
+.exit {
+  width: 15px;
+  height: 15px;
+  float: right;
+  position: sticky;
+  fill: #666;
+  margin-top: -2px;
+}
+
+.exit:hover,
+#exit_timkiem svg:hover,
+.exit:active,
+#exit_timkiem svg:active {
+  transform: scale(1.15, 1.15);
+  fill: #222;
+}
+
+.property_vp img,
+.property_bvsan img,
+.property_bvnhi img {
+  -webkit-filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
+  filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
+}
+
+/********************** CSS FORM SEARCH FILTER **********************/
+#btn_timkiem {
+  width: 50px;
+  fill: #666;
+  display: block;
+}
+
+#div_timkiem,
+#div_timlancan,
+#div_loaitimlancan {
+  display: none;
+}
+
+#btn_timkiem:hover,
+#btn_timkiem:active {
+  fill: #fbfbfb;
+  background-color: #00ADEF;
+}
+
+#form_select_filter {
+  max-width: fit-content;
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  left: 10px;
+  max-height: 97.5%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background-color: #00ADEF;
+}
+
+#form_select_filter * {
+  padding: 0;
+  margin: 0;
+}
+
+#form_select_filter input {
+  margin: 4px auto;
+}
+
+#ckb_all {
+  margin: 5px auto !important;
+}
+
+.checkbox *,
+.cursor {
+  cursor: pointer;
+}
+
+#form_select_filter input:checked {
+  background-color: #00ADEF;
+  border-color: #00ADEF;
+}
+
+#ds_diachi {
+  z-index: 1;
+  background-color: #fbfbfb;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: 92px;
+  border: solid 1px #aaa;
+  border-radius: 3px;
+  max-height: 300px;
+  display: none;
+  width: fit-content;
+}
+
+#ds_diachi li {
+  border-bottom: solid 1px #ccc;
+}
+
+#ds_diachi li span {
+  font-weight: bold !important;
+}
+
+#ds_diachi li:hover,
+#ds_diachi li:hover * {
+  color: #fbfbfb !important;
+  background-color: #00ADEF;
+  cursor: pointer !important;
+}
+
+#exit_timkiem {
+  position: absolute;
+  top: 3.5px;
+  left: 3.5px;
+  line-height: 15px;
+  cursor: pointer;
+  fill: #666;
+}
+
+#exit_timkiem svg {
+  width: 15px;
+  height: 15px;
+}
+
+#bo_chontatca {
+  position: absolute;
+  top: 183px;
+  left: 250px;
+  line-height: 30px;
+  cursor: pointer;
+  fill: #666;
+  display: none;
+}
+
+.div_lancan {
+  display: flex !important;
+}
+
+.yNHHyP-marker-view:has(.div_chinh) {
+  z-index: 2 !important;
+}
+
+.div_chinh {
+  animation: bounce 1.25s ease infinite;
+}
+
+@keyframes bounce {
+  70% {
+    transform: translateY(0%);
+  }
+
+  80% {
+    transform: translateY(-45%);
+  }
+
+  90% {
+    transform: translateY(0%);
+  }
+
+  95% {
+    transform: translateY(-25%);
+  }
+
+  97% {
+    transform: translateY(0%);
+  }
+
+  99% {
+    transform: translateY(-15%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.mo_khung_timkiem {
+  width: 25%;
+  max-width: 25%;
+  max-height: 97.5%;
+}
+
+#btn_ngonngu {
+  width: fit-content;
+  min-width: fit-content;
+  max-width: fit-content;
+  padding-bottom: 4px !important;
+}
+
+#btn_ngonngu svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ul_ngonngu {
+  top: -2px !important;
+  width: fit-content !important;
+  min-width: fit-content !important;
+  max-width: fit-content !important;
+}
+
+.ul_ngonngu a {
+  line-height: 16px;
+}
+
+.ul_ngonngu a:hover,
+.ul_ngonngu a:active {
+  background-color: #00ADEF;
+}
+
+.ul_ngonngu a:hover span,
+.ul_ngonngu a:active span {
+  color: #fbfbfb !important;
+}
+
+.ul_ngonngu svg {
+  height: 20px;
+  width: 20px;
+}
+
+#xoa_boloc {
+  display: none;
+}
+
+@media only screen and (max-width: 1280px) {
+  .mo_khung_timkiem {
+    zoom: 1;
+    width: 30%;
+    max-width: 30%;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .mo_khung_timkiem {
+    zoom: 0.9;
+    width: 45%;
+    max-width: 45%;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .mo_khung_timkiem {
+    zoom: 0.9;
+    width: 45%;
+    max-width: 45%;
+  }
+
+  #map {
+    height: 960px;
+  }
+
+  .address {
+    width: max-content;
+    margin-right: 5px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #map {
+    zoom: 0.9;
+  }
+
+  .address {
+    width: 275px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  #map {
+    zoom: 0.85;
+    height: 650px;
+  }
+
+  .mo_khung_timkiem {
+    width: 95.5%;
+    max-width: 95.5%;
+    height: 425px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #map {
+    zoom: 0.8;
+  }
+}
